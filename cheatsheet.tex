@@ -32,6 +32,15 @@
         
         %--- Begin Symmetric Ciphers
         \subsection*{Symmetric Ciphers}
+            \subsubsection*{Modes of Operation}
+                ECB: $c_{i} = \mathds{E}_{k}(m_{i})$ \\
+                CBC: $c_{0}=IV$, $c_{i}=\mathds{E}_{k}(m_{i} \oplus c_{i-1})$ \\
+                CFB/OFB: $ISR_{0}=IV$, $OSR_{i} = \mathds{E}_{k}(ISR_{i-1})$, $c_{i} = m_{i} \oplus$ j-th leftmost bits of $OSR_{i}$ \\ 
+                CTR: $ctr_{i}=IV+i$, $t_{i} = \mathds{E}_{k}(ctr_{i})$, $c_{i} = t_{i} \oplus m_{i}$
+            
+            \subsubsection*{Cryptanalysis}
+                Pile-up lemma: $Pr(Z_{1} \oplus \cdots \oplus Z_{n} = 0) = \frac{1}{2} + 2^{n-1}\prod_{i=1}^{n}\varepsilon_{i}$ \\
+
         %--- End Symmetric Ciphers
 
         %--- Begin Hash Functions

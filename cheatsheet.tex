@@ -1,0 +1,65 @@
+\documentclass[twoside, 11pt]{article}
+
+\usepackage[hmarginratio=1:1,top=8mm, left=8mm, right=8mm,columnsep=10pt]{geometry} % Document margins
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{dsfont} % For \mathds commands
+
+\title{Cryptography and Architectures for Computer Security - Cheat Sheet}
+\author{}
+\date{}
+
+
+\begin{document}
+    \maketitle
+    %\begin{multicols*}{1}
+        
+        %--- Begin Information Theory
+        \subsection*{Information Theory}
+            $Pr(C=c) = \sum_{k : c \in \lbrace \mathds{E}_{k}(m), \forall m \in \mathcal{M} \rbrace} Pr(K = k)Pr(P = \mathds{D}_k(c))$ \\
+            Perfect secrecy: $Pr(P=m|C=c) = Pr(P=m) \implies |\mathcal{K}| = |\mathcal{C}| = |\mathcal{P}|$ \\
+            Entropy: $H(X) = -\sum_{i=1}^{n} p_{i}\log_{2}p_{i}$ \quad $(p_{i}\log_{2}p_{i} = 0$ for $p_{i} = 0)$ \\
+            $H(X, Y) = - \sum_{i=1}^{n} \sum_{j=1}^{m}Pr(X = x_{i}, Y = y_{j})\log_{2}Pr(X = x_{i}, Y = y_{j})$ \\
+            $H(X | Y = y) = - \sum_{i=1}^{n} \sum_{j=1}^{m}Pr(X=x_{i} |Y = y)\log_{2}Pr(X = x_{i} | Y = y)$ \\
+            $H(X | Y) = - \sum_{i=1}^{n} \sum_{j=1}^{m}Pr(Y = y_{j})Pr(X = x_{i}, Y=y_{j})\log_{2}Pr(X = x_{i} | Y = y_{j})$ \\
+            $H(X) + H(Y) \geqslant H(X, Y)$; $H(X, Y)  = H(Y) + H(X|Y)$; $H(X|Y) \leqslant H(X)$ \\
+            Key equivocation: $H(K|C) = H(P)+H(K)-H(C)$ \\
+            Language redundancy: $R_{L} = 1 - \frac{H_{L}}{\log_{2}|\mathcal{M}|}$ \\
+            Spurious keys: $\bar{s_{n}} \geqslant \frac{|\mathcal{K}|}{|\mathcal{M}|^{nR_{L}}}-1$ \\
+            Unicity distance: $n_{0} \approx \frac{\log_{2}|\mathcal{K}|}{R_{L}\log_{2}|\mathcal{M}|}$
+        %--- End Information Theory   
+        
+        %--- Begin Symmetric Ciphers
+        \subsection*{Symmetric Ciphers}
+        %--- End Symmetric Ciphers
+
+        %--- Begin Hash Functions
+        \subsection*{Hash Functions}
+        %--- End Hash Functions
+
+        %--- Begin Algebraic Structures
+        \subsection*{Algebraic Structures}
+        %--- End Algebraic Structures
+
+        %--- Begin Elliptic Curves
+        \subsection*{Elliptic Curves}
+        %--- End Elliptic Curves
+
+        %--- Begin Public Key Cryptosystems
+        \subsection*{Public Key Cryptosystems}
+        %--- End Public Key Cryptosystems
+
+        %--- Begin Montgomery Multiplication
+        \subsection*{Montgomery Multiplication}
+        %--- End Montgomery Multiplication
+
+        %--- Begin Number Theoretical Cryptanalysis
+        \subsection*{Number Theoretical Cryptanalysis}
+        %--- End Number Theoretical Cryptanalysis
+
+        %--- Begin Misc
+        \subsection*{Misc}
+        %--- End Misc
+    %\end{multicols*}
+\end{document}

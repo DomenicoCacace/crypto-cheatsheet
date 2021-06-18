@@ -45,6 +45,9 @@
 
         %--- Begin Hash Functions
         \subsection*{Hash Functions}
+            First preimage: $Pr(m_{i} | d=h(m_{i})) \approx \frac{q}{|D|}$ \\
+            Second preimage: $Pr(h(m_{i}) = h(m)) = \frac{q-1}{|D|}$ \\
+            Collision: $Pr(\text{no collisions}) = e^{-\frac{q(q-1)}{2|D|}} \implies q \leqslant 1.774\sqrt{|D|}$
         %--- End Hash Functions
 
         %--- Begin Algebraic Structures

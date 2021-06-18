@@ -60,6 +60,11 @@
 
         %--- Begin Public Key Cryptosystems
         \subsection*{Public Key Cryptosystems}
+            \subsubsection*{RSA}
+                RSA keys: $k_{pub} = (n, e)$, $k_{priv}=(p, q, \varphi(n), d)$ \\
+                $n=p\cdot q$, $gcd(e, \varphi(n))=1$, $d=e^{-1}\mod{\varphi(n)}$ \\
+                $c=m^{e \mod{\varphi(n)}} \mod{n}$, $m=c^{d \mod{\varphi(n)}} \mod{n}$ \\
+                CRT: $m_{p} \equiv_{p} c^{d \mod{p-1}}$, $m_{q} \equiv_{q} c^{d \mod{q-1}}$, $m \equiv_{n} m_{p}q(q^{-1}\mod{p}) + m_{q}p(p^{-1}\mod{p})$
         %--- End Public Key Cryptosystems
 
         %--- Begin Montgomery Multiplication

@@ -73,6 +73,15 @@
 
         %--- Begin Number Theoretical Cryptanalysis
         \subsection*{Number Theoretical Cryptanalysis}
+            \subsubsection*{Primality test}
+                Fermat: $n$ is composite $\implies a^{n-1} \not\equiv_{n} 1$ with probability $> \frac{1}{2}$ \\ 
+                Miller-Rabin: $n-1=d2^{s}: a^{d} \not\equiv_{n} \pm 1$ and $a^{d2^{r}} \not\equiv -1 \implies n$ is composite \\
+            \subsubsection*{Factoring}
+                Fermat: $x = \lceil \sqrt{n} \rceil, y=x^{2}-n$, until y is a perfect square $y=y+2x+1, x = x+1$, then the factors are $x \pm \sqrt{y}$ \\
+                Pollard's $\rho$: pick $a, b$ at random (e.g $x_{0}=2, x_{i}=x_{i-1}^{2} \mod{n})$), if $gcd(a-b, n) \neq 1$ the result is a factor \\
+                Pollard's $p-1$: $p$ B-power-smooth, $a=2^{B!}$, so $p=gcd(a-1, n)$
+            \subsubsection*{DLog}
+                Polig-Hellman: for each prime factor $\eta = g^{\frac{n}{p}}$, $\gamma_{i}=\gamma_{i-1}g^{l_{i-1}p^{i-1}}$ ,$\delta_{i}=(\beta\gamma_{i}^{-1})^{\frac{n}{p^{i+1}}}$, $l_{i}=\log_{\eta}\delta_{i}$
         %--- End Number Theoretical Cryptanalysis
 
         %--- Begin Misc

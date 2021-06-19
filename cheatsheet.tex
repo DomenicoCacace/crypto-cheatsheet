@@ -89,7 +89,7 @@
         \subsection*{Number Theoretical Cryptanalysis}
             \subsubsection*{Primality test}
                 \textbf{Fermat} $n$ is composite $\implies a^{n-1} \not\equiv_{n} 1$ with probability $> \frac{1}{2}$ \\ 
-                \textbf{Miller-Rabin} $n-1=d2^{s}: a^{d} \not\equiv_{n} \pm 1$ and $a^{d2^{r}} \not\equiv -1 \implies n$ is composite \\
+                \textbf{Miller-Rabin} $n-1=d2^{r}: a^{d} \not\equiv_{n} \pm 1$ and $a^{d2^{r}} \not\equiv -1 \implies n$ is composite $(r \leqslant s-1)$\\
             \subsubsection*{Factoring}
                 \textbf{Fermat} $x = \lceil \sqrt{n} \rceil, y=x^{2}-n$, until y is a perfect square $y=y+2x+1, x = x+1$, then the factors are $x \pm \sqrt{y}$ \\
                 \textbf{Pollard's \boldmath $\rho$} pick $a, b$ at random (e.g $x_{0}=2, x_{i}=x_{i-1}^{2} + 1 \mod{n})$), if $gcd(a-b, n) \neq 1$ the result is a factor \\

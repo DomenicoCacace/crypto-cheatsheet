@@ -75,10 +75,19 @@
         %--- Begin Public Key Cryptosystems
         \subsection*{Public Key Cryptosystems}
             \subsubsection*{RSA}
-                \textbf{Keys} $k_{pub} = (n, e)$, $k_{priv}=(p, q, \varphi(n), d)$ \\
+                \textbf{Keys} $k_{pub} = \langle n, e\rangle$, $k_{priv}=\langle p, q, \varphi(n), d\rangle$ \\
                 $n=p\cdot q$, $gcd(e, \varphi(n))=1$, $d=e^{-1}\mod{\varphi(n)}$ \\
                 $c=m^{e \mod{\varphi(n)}} \mod{n}$, $m=c^{d \mod{\varphi(n)}} \mod{n}$ \\
                 \textbf{CRT} $m_{p} \equiv_{p} c^{d \mod{p-1}}$, $m_{q} \equiv_{q} c^{d \mod{q-1}}$, $m \equiv_{n} m_{p}q(q^{-1}\mod{p}) + m_{q}p(p^{-1}\mod{p})$
+
+            \subsubsection*{ElGamal}
+                \textbf{Keys} $k_{pub}=\langle n, g, g^{s}\rangle$, $k_{priv}=\langle s\rangle$ \\
+                $ctx = \langle \gamma, \delta\rangle = \langle g^{l}, ptx(g^{s})^{l}\rangle$, $ptx = \gamma^{n-s}\delta$ \\
+                $sign = \langle ptx, \langle \gamma, \delta\rangle\rangle = \langle ptx, g^{l}, l^{-1}(h(m)-s\cdot h(\gamma))\mod{n}\rangle$
+
+            \subsubsection*{DSS-DSA}
+                \textbf{Keys} $k_{pub} = \langle p, q, g, g^{s}\rangle$, $k_{priv} = (s)$; $q | (p-1), q = |\langle g \rangle|$
+                
         %--- End Public Key Cryptosystems
 
         %--- Begin Montgomery Multiplication

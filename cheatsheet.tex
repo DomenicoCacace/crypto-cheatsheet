@@ -56,11 +56,14 @@
 
         %--- Begin Elliptic Curves
         \subsection*{Elliptic Curves}
+            %$\mathds{E}(\mathds{K})= \lbrace(x, y) \in \mathds{K}^{2} : y^{2}+a_{1}xy + a_{3}y = x^{3} +  a_{2}x^{2} + a_{4}x + a_{6} \rbrace$ \\
+
+            For $\mathds{K} = \mathds{F}_{p}, p \ge 3$: $\varDelta = 4a^{3} + 27b^{2} \neq 0$ \\
             $\mathds{E}(\mathds{F}_{p}): y^{2} = x^{3} + ax + b$ for $a, b \in \mathds{F}_{p}, p \ge 3$ \\
             $x_{3}=(\frac{y_{1}- y_{2}}{x_{1}-x_{2}})^{2} - x_{1} - x_{2}$, $y_{3} = (\frac{y_{1}-y_{2}}{x_{1}-x_{2}})(x_{1}-x_{3})-y_{1}$ \\
             $x_{4}=(\frac{3x_{1}^{2}+a}{2y_{1}})^{2}-2x_{1}$, $y_{4} = -y_{1}+(\frac{3x_{1}^{2}+a}{2y_{1}})(x_{1}-x_{4})$ \\
             $-P_{1} = (x_{1, -y_{1}})$ \\
-            $\mathds{E}(\mathds{F}_{2^{m}}) : y^{2} + xy = x^{3} + ax^{2} + b$ for $a, b \in \mathds{F}_{2^{m}}, b\neq 0$ \\
+            $\mathds{E}(\mathds{F}_{2^{m}}) : y^{2} + xy = x^{3} + ax^{2} + b$ for $a, b \in \mathds{F}_{2^{m}}, \varDelta = b\neq 0$ \\
             $x_{3}= (\frac{y_{1}+y_{2}}{x_{1}+x_{2}})^{2} + (\frac{y_{1}+y_{2}}{x_{1}+x_{2}}) + x_{1} + x_{2} + a$, $y_{3} = (\frac{y_{1}+y_{2}}{x_{1}+x_{2}})(x_{1}+ x_{3})+x_{3}+ y_{1}$ \\
             $x_{4} = x_{1}^{2}+\frac{b}{x_{1}^{2}}$, $y_{4}=x_{1}^{2}+(x_{1}+ \frac{y_{1}}{x_{1}})x_{3} + x_{3}$ \\
             $-P_{1} = (x_{1}, x_{1}+ y_{1})$\\

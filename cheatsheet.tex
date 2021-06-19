@@ -52,6 +52,13 @@
 
         %--- Begin Algebraic Structures
         \subsection*{Algebraic Structures}
+            $\varphi(n) = |\lbrace x \in \mathds{N} : 1 \leqslant x \leqslant n-1, gcd(n, x) = 1 \rbrace|$ \\
+            $\varphi(nm) = \varphi(n)\varphi(m)$ for $gcd(n, m) =1$, $\varphi(p^{k}) = p^{k} - p^{k-1}$ \\
+            $\forall x \in \mathds{Z}_{n}^{*} \quad x^{\varphi(n)} \equiv_{n} 1$, $x^{-1} \equiv_{n} x^{\varphi(n) -1}$ \\
+            \textbf{CRT} $X = (\sum M_{i}M^{'}_{i}x_{i}) \mod{N}$, $M_{i} = \frac{N}{n_{i}}$, $M_{i}^{'} = M_{i}^{-1}\mod{n_{i}}$ \\ 
+            $\sum_{d: d|n}N_{d}(p)d = p^{n} = \deg(x^{p^{n}}-x)$ \\
+            $M_{d}(p) = \frac{\varphi(p^{n}-1)}{d}$ \\
+            \textbf{Irreducibility} $gcd(f(x), x^{p^{h}}-1)$, $h \leqslant \lfloor \frac{\deg(f(x))}{2} \rfloor$ \\
         %--- End Algebraic Structures
 
         %--- Begin Elliptic Curves
@@ -67,9 +74,6 @@
             $x_{3}= (\frac{y_{1}+y_{2}}{x_{1}+x_{2}})^{2} + (\frac{y_{1}+y_{2}}{x_{1}+x_{2}}) + x_{1} + x_{2} + a$, $y_{3} = (\frac{y_{1}+y_{2}}{x_{1}+x_{2}})(x_{1}+ x_{3})+x_{3}+ y_{1}$ \\
             $x_{4} = x_{1}^{2}+\frac{b}{x_{1}^{2}}$, $y_{4}=x_{1}^{2}+(x_{1}+ \frac{y_{1}}{x_{1}})x_{3} + x_{3}$ \\
             $-P_{1} = (x_{1}, x_{1}+ y_{1})$\\
-
-
-        
             %--- End Elliptic Curves
 
         %--- Begin Public Key Cryptosystems
@@ -86,8 +90,7 @@
                 $sign = \langle ptx, \langle \gamma, \delta\rangle\rangle = \langle ptx, g^{l}, l^{-1}(h(m)-s\cdot h(\gamma))\mod{n}\rangle$
 
             \subsubsection*{DSS-DSA}
-                \textbf{Keys} $k_{pub} = \langle p, q, g, g^{s}\rangle$, $k_{priv} = (s)$; $q | (p-1), q = |\langle g \rangle|$
-                
+                \textbf{Keys} $k_{pub} = \langle p, q, g, g^{s}\rangle$, $k_{priv} = (s)$; $q | (p-1), q = |\langle g \rangle|$     
         %--- End Public Key Cryptosystems
 
         %--- Begin Montgomery Multiplication
@@ -109,6 +112,7 @@
 
         %--- Begin Misc
         \subsection*{Misc}
+            \textbf{Convert to power of 2} $x = 2^{n} \Leftrightarrow n = \frac{\ln(x)}{\ln(2)}$ \\
         %--- End Misc
     %\end{multicols*}
 \end{document}

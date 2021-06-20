@@ -87,9 +87,14 @@
 
             \subsubsection*{ElGamal}
                 \textbf{Keys} $k_{pub}=\langle n, g, g^{s}\rangle$, $k_{priv}=\langle s\rangle$ \\
-                $ctx = \langle \gamma, \delta\rangle = \langle g^{l}, ptx(g^{s})^{l}\rangle$, $ptx = \gamma^{n-s}\delta$ \\
-                $sign = \langle ptx, \langle \gamma, \delta\rangle\rangle = \langle ptx, g^{l}, l^{-1}(h(m)-s\cdot h(\gamma))\mod{n}\rangle$
+                $ctx = \langle \gamma, \delta\rangle = \langle g^{l}$, $ptx(g^{s})^{l}\rangle$, $ptx = \gamma^{n-s}\delta$ \\
+                $sign = \langle ptx, \langle \gamma, \delta\rangle\rangle = \langle ptx, g^{l}, l^{-1}(h(m)-s\cdot h(\gamma))\mod{n}\rangle$ \\
+                signature is valid iff $(g^{s})^{h(\gamma)}\cdot\gamma^{\delta} = g^{h(ptx)}$
 
+            \subsubsection*{ECC-ElGamal}
+                \textbf{Keys} $k_{pub} = \langle n, P, [k_{priv}]P \rangle$, $k_{priv} \in \mathds{Z}_{n}$ \\
+                $ctx = \langle \gamma,  \delta \rangle = \langle[r]P, M+[r]k_{pub,B}\rangle$, $[r]k_{pub, B} = [k_{priv, B}]\gamma = [k_{priv, B}]([r]P) \rightarrow ptx = \delta - [k_{priv, B}]\gamma$
+                
             \subsubsection*{DSS-DSA}
                 \textbf{Keys} $k_{pub} = \langle p, q, g, g^{s}\rangle$, $k_{priv} = (s)$; $q | (p-1), q = |\langle g \rangle|$     
         %--- End Public Key Cryptosystems
@@ -111,6 +116,7 @@
                 \textbf{Pollard's \boldmath $\rho$} pick $a, b$ at random (e.g $x_{0}=2, x_{i}=x_{i-1}^{2} + 1 \mod{n})$), if $gcd(a-b, n) \neq 1$ the result is a factor \\
                 \textbf{Pollard's p-1} $p$ B-power-smooth, $a=2^{B!}$, so $p=gcd(a-1, n)$
             \subsubsection*{DLog}
+                \textbf{BSGS} $b = g^{x} \rightarrow \beta(g^{-\lceil \sqrt{n}\rceil})^{i} = g^{j}$, $x = i\lceil \sqrt{n} \rceil + j$ \\
                 \textbf{Polig-Hellman} for each prime factor $\eta = g^{\frac{n}{p}}$, $\gamma_{i}=\gamma_{i-1}g^{l_{i-1}p^{i-1}}$ ,$\delta_{i}=(\beta\gamma_{i}^{-1})^{\frac{n}{p^{i+1}}}$, $l_{i}=\log_{\eta}\delta_{i}$
         %--- End Number Theoretical Cryptanalysis
 
